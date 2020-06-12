@@ -5,5 +5,5 @@ public class No {
     No ultimo;
     No anterior;
     No proximo;
-    Ssd ssd;
+    Produto ssd;
 }
