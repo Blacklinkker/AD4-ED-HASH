@@ -49,4 +49,18 @@ public class List {
         //caso não encontrar, retorna negativa
         return "Não encontrado.";
     }
+    @Override
+    public String toString() {
+        Segment aux=new Segment();
+        aux=first;
+        int i=1;
+        String prodList="";
+        while(aux!=null){
+            prodList="Produto Nº "+i+":"
+            +"\n Código do produto"+aux.ssd.code
+            +"\n Marca do produto"+aux.ssd.brand
+            +"\n Capacidade do produto"+aux.ssd.storage+"Gb.";
+            i++;
+        }
+    }
 }

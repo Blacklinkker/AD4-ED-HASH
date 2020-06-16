@@ -1,7 +1,7 @@
 package AD4;
 
 public class Segment {
-    //sentido dos ponteiros: (anterior) inicio-> proximo-> proximo...)
+    //sentido dos ponteiros: (anterior) inicio-> proximo-> proximo...etc
     //Segmento anterior 
     Segment previous;
     //segmento seguinte
