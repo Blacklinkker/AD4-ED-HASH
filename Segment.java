@@ -1,4 +1,4 @@
-package AD4;
+package AD4_2;
 
 public class Segment {
     //sentido dos ponteiros: (anterior) inicio-> proximo-> proximo...etc
@@ -17,5 +17,9 @@ public class Segment {
     //construtor vazio para praticidade em buscas
     public Segment(){
 
+    }
+    @Override
+    public String toString() {
+        return this.ssd.toString();
     }
 }

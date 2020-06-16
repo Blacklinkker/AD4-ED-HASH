@@ -1,6 +1,5 @@
-package AD4;
+package AD4_2;
 
-//utilizando um  ssd para uma aplicação mais interessante
 public class Product {
     int code; //codigo do item que será usado no Hash
     String brand; //marca do ssd
@@ -16,8 +15,8 @@ public class Product {
     //override do metodo toString() para retornar mensagem personalizada
     @Override
     public String toString() {
-        return "Codigo do produto: "+this.code+" \n"
+        return "Código do produto: "+this.code+" \n"
         +"Marca do produto: "+this.brand+"\n"
-        +"Capacidade do produto: "+this.storage+"GB.";
+        +"Capacidade do produto: "+this.storage+"GB.\n";
     }
 }
