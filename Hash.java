@@ -40,11 +40,17 @@ public class Hash {
     public static void main(String[] args) {
         Hash hashPrincipal=new Hash();
         Product a=new Product(25, "Seagate", 256);
-        Product b=new Product(100, "Kingston", 500);
+        Product b=new Product(100, "Kingston", 512);
+        Product c=new Product(125, "WD", 960);
         hashPrincipal.addProduct(a);
         hashPrincipal.addProduct(b);
+        hashPrincipal.addProduct(c);
         System.out.println(hashPrincipal.findProduct(25));
         System.out.println(hashPrincipal.findProduct(100));
+        System.out.println(hashPrincipal.findProduct(125));
+        System.out.println(hashPrincipal.hashSet[hashPrincipal.generateKey(25)].removeIndex(25));
+        System.out.println(hashPrincipal.hashSet[hashPrincipal.generateKey(100)].removeIndex(100));
         
+        System.out.println(hashPrincipal.findProduct(100));
     }
 }

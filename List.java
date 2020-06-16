@@ -31,45 +31,61 @@ public class List {
     }
 
     //remove no inicio, utilizado para o metodo de remover com base em codigo
-    public String removeBeggining(){
+    private String removeBeggining(){
         String aux=first.toString();
         first=first.next;
         first.previous=null;
+        size--;
         return "Removido com sucesso: \n"+aux;
     }
     //remove no fim, utilizado para o metodo de remover com base em codigo
-    public String removeEnd(){
+    private String removeEnd(){
+        String aux=last.toString();
         last=last.previous;
         last.next=null;
-        return null;
+        size--;
+        return "Removido com sucesso: \n"+aux;
     }
+
     //metodo para remover Segmento com base no codigo do mesmo.
     public String removeIndex(int code){
         if(code==first.ssd.code){
-            removeBeggining();
-
+           return removeBeggining();
         }
         if(code==last.ssd.code){
-            removeEnd();
+            return removeEnd();
         }
-        return null;
+        Segment seg=first;
+        while(seg!=null){
+            if(seg.ssd.code==code){
+                String aux=seg.toString();
+                if(seg.next!=null){
+                    seg.next.previous=seg.previous;
+                }
+                if(seg.previous!=null){
+                    seg.previous.next=seg.next;
+                }
+                return "Removido com sucesso: \n"+aux;
+            }
+        }
+        return "Não foi possivel remover";
     }
 
 
     //pesquisa na lista encadeada o produto,se encontrado retorna seu metodo toString modificado.
     public String searchProduct(int code){
         //começa a busca do primeiro da lista
-        Segment aux=first;
+        Segment seg=first;
         String exists="";
         //enquanto nao cair em nulo, compara e vai para o proximo
-        while(aux!=null){
+        while(seg!=null){
             //se encontrar, retorna positivo e com o conteudo pelo metodo toString
-            if(aux.ssd.code==code){
-                exists="Produto encontrado: \n"+aux.ssd.toString();
+            if(seg.ssd.code==code){
+                exists="Produto encontrado: \n"+seg.ssd.toString();
                 return exists;
             }
             //navega para o proximo segmento
-            aux=aux.next;
+            seg=seg.next;
         }
         //caso não encontrar, retorna negativa
         return null;
